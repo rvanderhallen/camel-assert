@@ -1,0 +1,49 @@
+# Numerous always-ignore extensions
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.vi
+*~
+*.sass-cache
+
+# OS or Editor folders
+.DS_Store
+Thumbs.db
+.cache
+
+# Folders to ignore
+.hg
+.svn
+.CVS
+
+# Maven
+log/
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# Eclipse
+.classpath/
+.project/
+.settings/
+target/
+bin/
+
+# Intellij
+.idea/
+*.iml
+*.iws
+.metadata/
+*.project
+*.classpath
+
+failed/
+Servers/
+
