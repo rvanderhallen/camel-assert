@@ -1,0 +1,43 @@
+// ------------------------------------------------------------------
+// Transitive dependencies of this project determined from the
+// maven pom organized by organization.
+// ------------------------------------------------------------------
+
+camel-aggregation
+
+
+From: 'an unknown organization'
+  - JavaBeans Activation Framework (JAF) (http://java.sun.com/products/javabeans/jaf/index.jsp) javax.activation:activation:jar:1.1
+    License: Common Development and Distribution License (CDDL) v1.0  (https://glassfish.dev.java.net/public/CDDLv1.0.html)
+
+From: 'Eclipse Foundation' (https://www.eclipse.org)
+  - Jakarta Activation API jar (https://github.com/eclipse-ee4j/jaf/jakarta.activation-api) jakarta.activation:jakarta.activation-api:jar:1.2.2
+    License: EDL 1.0  (http://www.eclipse.org/org/documents/edl-v10.php)
+  - Jakarta XML Binding API (https://github.com/eclipse-ee4j/jaxb-api/jakarta.xml.bind-api) jakarta.xml.bind:jakarta.xml.bind-api:jar:2.3.3
+    License: Eclipse Distribution License - v 1.0  (http://www.eclipse.org/org/documents/edl-v10.php)
+
+From: 'Oracle' (http://www.oracle.com)
+  - JavaBeans Activation Framework (http://java.net/all/javax.activation/) com.sun.activation:javax.activation:jar:1.2.0
+    License: CDDL/GPLv2+CE  (https://github.com/javaee/activation/blob/master/LICENSE.txt)
+  - JavaMail API (compat) (http://kenai.com/projects/javamail/mail) javax.mail:mail:jar:1.4.7
+    License: CDDL  (http://www.sun.com/cddl)    License: GPLv2+CE  (https://glassfish.java.net/public/CDDL+GPL_1_1.html)
+
+From: 'QOS.ch' (http://www.qos.ch)
+  - SLF4J API Module (http://www.slf4j.org) org.slf4j:slf4j-api:jar:1.7.36
+    License: MIT License  (http://www.opensource.org/licenses/mit-license.php)
+
+From: 'The Apache Software Foundation' (https://www.apache.org/)
+  - Camel :: API (https://www.apache.org/camel/camel-parent/core/camel-api/) org.apache.camel:camel-api:jar:3.16.0
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Camel :: Attachments (https://www.apache.org/camel/camel-parent/components/camel-attachments/) org.apache.camel:camel-attachments:jar:3.16.0
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Camel :: Management API (https://www.apache.org/camel/camel-parent/core/camel-management-api/) org.apache.camel:camel-management-api:jar:3.16.0
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Camel :: Support (https://www.apache.org/camel/camel-parent/core/camel-support/) org.apache.camel:camel-support:jar:3.16.0
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Camel :: Util (https://www.apache.org/camel/camel-parent/core/camel-util/) org.apache.camel:camel-util:jar:3.16.0
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+
+
+
