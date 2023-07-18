@@ -12,6 +12,7 @@ import org.apache.camel.builder.Builder;
 import org.apache.camel.builder.ExchangeBuilder;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.test.junit5.CamelTestSupport;
+import org.apache.camel.util.concurrent.SynchronousExecutorService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -28,24 +29,22 @@ class CamelAggregationStrategyTest extends CamelTestSupport {
             @Override
             public void configure() {
                 from(CONSUMER_ENDPOINT)
-                    .multicast(new AggregationStrategy() {
-                        @Override
-                        public Exchange aggregate(Exchange oldExchange, Exchange newExchange) {
-                            if (oldExchange == null) {
-                                return newExchange;
-                            }
-
-                            if (newExchange.getIn().getBody() instanceof String) {
-                                oldExchange.getMessage(AttachmentMessage.class).setBody(newExchange.getIn().getBody());
-                            } else {
-                                byte[] data = newExchange.getIn().getBody(byte[].class);
-                                oldExchange.getMessage(AttachmentMessage.class).addAttachment("attachment", new DataHandler(new ByteArrayDataSource(data, "text/plain")));
-                            }
-
-                            return oldExchange;
+                    .multicast((oldExchange, newExchange) -> {
+                        if (oldExchange == null) {
+                            return newExchange;
                         }
+
+                        if (newExchange.getIn().getBody() instanceof String) {
+                            oldExchange.getMessage(AttachmentMessage.class).setBody(newExchange.getIn().getBody());
+                        } else {
+                            byte[] data = newExchange.getIn().getBody(byte[].class);
+                            oldExchange.getMessage(AttachmentMessage.class).addAttachment("attachment", new DataHandler(new ByteArrayDataSource(data, "text/plain")));
+                        }
+
+                        return oldExchange;
                     }).stopOnException()
-                        .to("direct:getBody", "direct:getAttachment");
+                        .to("direct:getBody", "direct:getAttachment")
+                    .end();
                 
                 from("direct:getBody")
                     .setBody(Builder.constant("body"));
